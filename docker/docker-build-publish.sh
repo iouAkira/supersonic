@@ -12,8 +12,8 @@ build_docker_image() {
   echo "Building Docker image: supersonic:$version"
   docker buildx build --no-cache --platform linux/amd64,linux/arm64 \
                       --build-arg SUPERSONIC_VERSION=$version \
-                      -t supersonicbi/supersonic:$version \
-                      -t supersonicbi/supersonic:latest \
+                      -t akyakya/supersonic:$version \
+                      -t akyakya/supersonic:latest \
                       -f docker/Dockerfile \
                       --push .
   if [ $? -ne 0 ]; then
